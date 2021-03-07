@@ -7,7 +7,7 @@ RARS RISC-V CPU Simulator support for EJudge contest management system
 2. EJudge integration:
     * Put both `*.in` files in `$EJUDGE_PREFIX/libexec/ejudge/lang` in (e.g. /home/ejudge/inst-ejudge/libexec/ejudge/lang/in) and run `ejudge-setup`
     * Or put both `*.in` files in `/home/ejudge/compile/scripts/in` and run `ejudge-configure-compilers`. 
-3. Update EJudge limits, e.g. for `/home/judges/000001/conf/serve.cfg` set:
+3. Update EJudge limits (because RARS is java-based simulator), e.g. for `/home/judges/000001/conf/serve.cfg` set:
 ```
 [problem]
 max_vm_size = 64G
