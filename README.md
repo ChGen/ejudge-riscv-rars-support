@@ -18,3 +18,8 @@ time_limit = 10
 4. References:
     * RARS RISC-V CPU Simulator: https://github.com/TheThirdOne/rars
     * EJudge contest management system: https://github.com/blackav/ejudge
+5. Some known issues:
+    * RARS executes asm files without extentions without user input O_o. Maybe they are treated as binary/compiled files?
+    * No built-in way in RARS to disable 1st (copyright) & last (exit type) output lines to stdio
+    * RARS syscall for reading int's - no EOF handling
+ 
