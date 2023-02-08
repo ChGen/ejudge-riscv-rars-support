@@ -21,11 +21,10 @@ then
   exit 1
 fi
 
+source=`cat $1 | base64`  # new lines and ' should be interpreted as raw symbols. So base64 encode
 echo "#!/bin/bash" > $2
 echo "t=\$(mktemp /tmp/XXXXXXX.asm)" >> $2 # RARS needs .asm extension to compile & run program
-echo "echo ' " >> $2
-cat $1 >> $2
-echo " ' > \$t " >> $2
+echo "echo '$source' | base64 -d > \$t" >> $2 # Decode base64 source
 echo "${RARSPATH} ${EJUDGE_FLAGS} \$t |sed '1d;\$d' -" >> $2 # cut 1st & last lines: RARS (c) and exit code lines
 echo "rm -f \$t" >> $2
 chmod +x $2 
